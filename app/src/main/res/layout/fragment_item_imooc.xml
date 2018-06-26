@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/mRelative"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/courseBanner"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        tools:background="#f00" />
+
+
+    <TextView
+        android:id="@+id/mTVcourseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        tools:text="Vue核心技术 Vue+Vue-Router+Vuex+SSR实战精讲" />
+
+    <com.cb.ratingbar.CBRatingBar
+        android:id="@+id/mRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mTVcourseName"
+        android:layout_toEndOf="@id/courseBanner"
+        app:starCount="5"
+        app:starCoverDir="left_to_right"
+        app:starEndColor="#00ff00"
+        app:starMaxProgress="10"
+        app:starProgress="9.8"
+        app:starShowStroke="true"
+        app:starSize="10dp"
+        app:starSpace="2dp"
+        app:starStartColor="#0000ff"
+        app:starUseGradient="true" />
+
+    <TextView
+        android:id="@+id/mTVcourseBuyNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mTVcourseName"
+        android:layout_toEndOf="@id/mRatingBar"
+        android:textSize="12sp"
+        tools:text="购买人数:834" />
+
+    <TextView
+        android:id="@+id/mTVcourseIntroduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mTVcourseBuyNum"
+        android:layout_toEndOf="@id/courseBanner"
+        android:textSize="14sp"
+        tools:text="xxxxxxxxxx" />
+
+
+</RelativeLayout>
