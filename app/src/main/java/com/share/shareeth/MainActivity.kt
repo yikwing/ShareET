@@ -14,15 +14,21 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-
+                position = 0
+                val currentFragment = getFragment()
+                replaceFragment(mFragment, currentFragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-
+                position = 1
+                val currentFragment = getFragment()
+                replaceFragment(mFragment, currentFragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-
+                position = 2
+                val currentFragment = getFragment()
+                replaceFragment(mFragment, currentFragment)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -33,12 +39,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolbar.title = "MainActivity"
-        setSupportActionBar(toolbar)
+//        toolbar.title = "Share"
+////        setSupportActionBar(toolbar)
 
         mBaseFragments.add(HomeFragment())
         mBaseFragments.add(HomeFragment())
-        mBaseFragments.add(HomeFragment())
+        mBaseFragments.add(UserFragment())
 
         replaceFragment(mFragment, HomeFragment())
 

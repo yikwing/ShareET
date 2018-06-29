@@ -54,5 +54,5 @@ dependencies {
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     implementation 'com.github.CB-ysx:CBRatingBar:3.0.0'
-
+    implementation 'com.just.agentweb:agentweb:4.0.2'
 }

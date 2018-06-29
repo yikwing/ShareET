@@ -4,6 +4,7 @@ import android.app.Application
 import com.blankj.utilcode.util.Utils
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
+import com.share.shareeth.utils.Density
 
 
 /**
@@ -23,6 +24,11 @@ class MyApplication : Application() {
     }
 
     private fun initJar() {
+//        val designWidth = 750
+//        RudenessScreenHelper(this, designWidth.toFloat()).activate()
+
+        Density.setDensity(this, 375f)
+
         initLogger()
         initUtils()
     }

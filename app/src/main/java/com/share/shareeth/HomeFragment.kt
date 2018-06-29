@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.orhanobut.logger.Logger
 import com.rongyi.baselibrary.ext.execute
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
@@ -25,6 +24,8 @@ class HomeFragment : BaseFragment() {
     var mData = ArrayList<ImoocBean>()
     lateinit var mAdapter: EmptyAdapter
 
+    var page = 0
+
     companion object {
         fun newInstance(): HomeFragment {
             return HomeFragment()
@@ -38,34 +39,47 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        refreshLayout.setOnRefreshListener {
+            initNetwork(0)
+            refreshLayout.isRefreshing = false
+        }
+
         mImoocRecycler.layoutManager = LinearLayoutManager(activity)
         mAdapter = EmptyAdapter(R.layout.fragment_item_imooc, mData)
         mAdapter.openLoadAnimation()
         mImoocRecycler.adapter = mAdapter
 
-        mAdapter.onItemChildClickListener = BaseQuickAdapter.OnItemChildClickListener { adapter, view, position ->
+        mAdapter.onItemChildClickListener = BaseQuickAdapter.OnItemChildClickListener { _, view, position ->
 
-            val intent = Intent(activity, WebViewActivity::class.java)
-            intent.putExtra("url", mData[position].courseBaseUrl)
-            startActivity(intent)
+            when (view.id) {
+                R.id.courseBanner -> {
+                    val intent = Intent(activity, WebViewActivity::class.java)
+                    intent.putExtra("url", mData[position].courseBaseUrl)
+                    startActivity(intent)
+                }
+                R.id.content_frame -> {
+
+                }
+            }
+
         }
 
         mAdapter.setOnLoadMoreListener({
 
-            mImoocRecycler.postDelayed({
-                mAdapter.loadMoreEnd()
-            }, 200)
+
+            initNetwork(++page)
+
 
         }, mImoocRecycler)
 
-        initNetwork()
+        initNetwork(page)
     }
 
-    private fun initNetwork() {
+    private fun initNetwork(page: Int) {
 
         val hashMap = HashMap<String, String>()
         hashMap["token"] = "yikwing"
-        hashMap["pageIndex"] = "1"
+        hashMap["pageIndex"] = page.toString()
 
         RetrofitFactory.instance.create(ImoocService::class.java)
                 .getImoocInfo(hashMap)
@@ -79,15 +93,16 @@ class HomeFragment : BaseFragment() {
                     }
 
                     override fun onNext(t: List<ImoocBean>) {
-                        Logger.d(t.size)
 
                         mData.addAll(t)
                         mAdapter.notifyDataSetChanged()
 
+                        mAdapter.loadMoreComplete()
+
                     }
 
                     override fun onError(e: Throwable) {
-
+                        mAdapter.loadMoreEnd()
                     }
                 })
     }
