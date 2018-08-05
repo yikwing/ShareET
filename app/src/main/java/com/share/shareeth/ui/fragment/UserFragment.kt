@@ -1,9 +1,10 @@
-package com.share.shareeth
+package com.share.shareeth.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.share.shareeth.R
 
 /**
  * Demo class

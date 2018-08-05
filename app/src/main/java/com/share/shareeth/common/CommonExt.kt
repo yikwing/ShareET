@@ -1,4 +1,4 @@
-package com.rongyi.baselibrary.ext
+package com.share.shareeth.common
 
 import io.reactivex.Observable
 import io.reactivex.Observer

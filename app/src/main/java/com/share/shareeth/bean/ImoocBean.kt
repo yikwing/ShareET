@@ -1,4 +1,4 @@
-package com.share.shareeth
+package com.share.shareeth.bean
 
 /**
  * Demo class

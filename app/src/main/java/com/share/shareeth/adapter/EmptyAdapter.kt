@@ -1,8 +1,11 @@
-package com.share.shareeth
+package com.share.shareeth.adapter
 
 import com.cb.ratingbar.CBRatingBar
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.share.shareeth.R
+import com.share.shareeth.bean.ImoocBean
+import com.share.shareeth.ui.GlideApp
 
 class EmptyAdapter(layoutResId: Int, data: MutableList<ImoocBean>?) : BaseQuickAdapter<ImoocBean, BaseViewHolder>(layoutResId, data) {
     override fun convert(helper: BaseViewHolder, item: ImoocBean) {

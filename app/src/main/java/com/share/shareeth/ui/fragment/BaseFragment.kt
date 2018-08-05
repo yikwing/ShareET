@@ -1,4 +1,4 @@
-package com.share.shareeth
+package com.share.shareeth.ui.fragment
 
 import android.support.v4.app.Fragment
 

@@ -1,7 +1,7 @@
-package com.share.shareeth
+package com.share.shareeth.utils
 
 import android.util.Log
-import com.rongyi.baselibrary.common.BaseConstant
+import com.share.shareeth.common.BaseConstant
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -1,4 +1,4 @@
-package com.rongyi.baselibrary.common
+package com.share.shareeth.common
 
 /**
  * Demo class

@@ -1,4 +1,4 @@
-package com.share.shareeth
+package com.share.shareeth.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.rongyi.baselibrary.ext.execute
+import com.share.shareeth.*
+import com.share.shareeth.adapter.EmptyAdapter
+import com.share.shareeth.bean.ImoocBean
+import com.share.shareeth.common.execute
+import com.share.shareeth.service.ImoocService
+import com.share.shareeth.ui.activity.WebViewActivity
+import com.share.shareeth.utils.RetrofitFactory
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_home.*

@@ -1,10 +1,11 @@
-package com.share.shareeth
+package com.share.shareeth.ui.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.LinearLayout
 import com.just.agentweb.AgentWeb
+import com.share.shareeth.R
 import kotlinx.android.synthetic.main.activity_webview.*
 
 

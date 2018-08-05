@@ -6,17 +6,17 @@
  */
 
 object Version {
-    val kotlin = "1.2.50"
-    val support = "27.1.1"
-    val anko = "0.10.5"
-    val rxkotlin = "2.2.0"
-    val rxjava2 = "2.1.14"
-    val rxandroid = "2.0.2"
-    val okhttp = "3.10.0"
-    val retrofit = "2.4.0"
-    val glide = "4.7.1"
-    val dagger = "2.16"
-    val utils = "1.17.0"
+    const val kotlin = "1.2.50"
+    const val support = "27.1.1"
+    const val anko = "0.10.5"
+    const val rxkotlin = "2.2.0"
+    const val rxjava2 = "2.1.16"
+    const val rxandroid = "2.0.2"
+    const val rxlifecycle2 = "2.2.1"
+    const val okhttp = "3.10.0"
+    const val retrofit = "2.4.0"
+    const val glide = "4.7.1"
+    const val dagger = "2.16"
 }
 
 object Deps {
@@ -34,6 +34,9 @@ object Deps {
     val rxkotlin2 = "io.reactivex.rxjava2:rxkotlin:${Version.rxkotlin}"
     val rxandroid2 = "io.reactivex.rxjava2:rxandroid:${Version.rxandroid}"
     val rxjava2 = "io.reactivex.rxjava2:rxjava:${Version.rxjava2}"
+    val rxlifecycle2 = "com.trello.rxlifecycle2:rxlifecycle-components:${Version.rxlifecycle2}"
+    val rxCache2 = "com.github.VictorAlbertos.RxCache:runtime:1.8.3-2.x"
+    val rxCache2_gson = "com.github.VictorAlbertos.Jolyglot:gson:0.0.4"
 
     // okhttp3
     val okhttp = "com.squareup.okhttp3:okhttp:${Version.okhttp}"

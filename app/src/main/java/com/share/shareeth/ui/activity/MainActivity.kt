@@ -1,8 +1,12 @@
-package com.share.shareeth
+package com.share.shareeth.ui.activity
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.share.shareeth.R
+import com.share.shareeth.ui.fragment.BaseFragment
+import com.share.shareeth.ui.fragment.HomeFragment
+import com.share.shareeth.ui.fragment.UserFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
